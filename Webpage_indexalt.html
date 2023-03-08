@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1" /> 
+		<title>Machine control - Mixing Mode</title>
+		<link rel = "stylesheet" href = "Index_sty.css">
+	</head>
+	<body>
+		<script src = "bluthcnt.js"></script>
+		
+		<div class = "h1seg">
+		<h1>Please Mix Your Drink</h1>
+		</div>
+		<p class = "p0"><b>Connect the bluetooth by pressing the <code>"Connect"</code> button below </b></p>
+		<button class = "btsty" id = "connect" type = "button">Connect</button>
+		<div id = "terminal"></div>
+		<p class = "p0">Choose all the drinks you wish to have and press the <code>"pour"</code> button</p>
+		<p><b><1></b></p>
+		<p><code>drink 1</code></p>
+		<label for = "d1per" class = "p0">Input percentage (%)</label>
+		<input type = "text" id = "d1per" name = "d1per"><br>
+		<p><b><2></b></p>
+		<p><code>drink 2</code></p>
+		<label for = "d2per" class = "p0">Input percentage (%)</label>
+		<input type = "text" id = "d2per" name = "d2per"><br>
+		<p><b><3></b></p>
+		<p><code>drink 3</code></p>
+		<label for = "d3per" class = "p0">Input percentage (%)</label>
+		<input type = "text" id = "d3per" name = "d3per"><br>
+		<button type = "button" class = "btsty">Pour</button>
+		<br><br>
+		<button type = "button" class = "btsty" onclick = "document.location = 'Webpage_welcome.html'">Back to main page</button>
+		<hr>
+		<footer>
+		<p class = "pfoot">Group 3 Drink Machine</p>
+		</footer>
+	</body>
+</html>

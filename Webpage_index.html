@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1" />
+		<title>Machine Control - Select Mode</title>
+		<link rel = "stylesheet" href = "Index_sty.css">
+		
+	</head>
+	<body>
+		
+		<div class = "h1seg">
+		<h1>Please select your drink</h1>
+		</div>
+		<p class = "p0" style = "text-align: center"><b>Connect the bluetooth by pressing the <code>"Connect"</code> button below </b></p>
+		
+		<button class = "btsty" id = "connect" type = "button">Connect</button>
+		<button class = "btsty" id = "disconnect" type = "button">Disconnect</button>
+		<div id = "terminal"></div>
+		<p><b><1></b></p>
+		<p><code>drink 1</code></p>
+		<button type = "button" class = "btsty" >select</button>
+		
+		<p><b><2></b></p>
+		<p><code>drink 2</code></p>
+		<button type = "button" class = "btsty">select</button>
+		
+		<p><b><3></b></p>
+		<p><code>drink 3</code></p>
+		<button type = "button" class = "btsty">select</button>
+		<br><br>
+		<script src = "bluthcnt.js"></script>
+		<script src = "companion.js" data-service-worker = "sw.js"></script>
+		<button class = "btsty"type = "button" onclick = "document.location = 'Webpage_welcome.html'">Back to main page</button>
+		
+		<hr>
+		<footer>
+		<p class = "pfoot">Group 3 Drink Machine</p>
+		</footer>
+	</body>
+</html>

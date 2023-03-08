@@ -1,0 +1,78 @@
+body {
+	background-color: #ffffe6;			
+}
+
+
+h1 {
+	font-family: calibri;
+	text-align: center;
+	background-color: #009999;
+	color: black;
+}
+
+.h1seg {
+	display: block;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background-color: #009999;
+	outline-style: outset;
+	outline-color: green;
+}
+
+h2 {
+	font-family: calibri;
+	text-align: center;
+	background-color: lime;
+	border-left-style: solid;
+	border-right-style: solid;
+}
+
+p {
+	font-family: courier;
+	
+}
+
+.p0 {
+	font-family: calibri;
+}
+
+.a1{
+	background-color: green;
+	font-family: calibri;
+	color: white;
+}
+
+.bt1float {
+	font-family: calibri;
+	font-size: 30px;
+	margin-top: 20px;
+	padding: 100px;
+	float: left;
+	width:50%;
+	background-color: #00cc66;
+	outline-style: outset;
+	outline-color: green;
+}
+
+.bt2float {
+	font-family: calibri;
+	font-size: 30px;
+	margin-top: 20px;
+	padding: 100px;
+	float: right;
+	width: 50%;
+	background-color: #0099cc;
+	outline-style: outset;
+	outline-color: green;
+}
+
+.pfoot {
+	font-family: calibri;
+	text-align:center;
+}
+
+.btsty {
+	background-color: #523570;
+	color: white;
+}
+
