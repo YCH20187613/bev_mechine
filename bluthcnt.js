@@ -80,7 +80,7 @@ function handleDisconnection(event){
 	let device = event.target;
 	
 	cDCC(device).
-		then(characteristic => startNotifications(characteristic));
+		then(characteristic => startNotifications(characteristic)).
 		catch(error => log(error));
 }
 
