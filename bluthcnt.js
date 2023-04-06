@@ -12,7 +12,21 @@ connectbutton.addEventListener('click', function(){
 disconnectbutton.addEventListener('click', function(){
 	disconnect();
 });
-	
+
+drink_select_1.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent form sending
+  send(); // Send text field contents
+});
+
+drink_select_2.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent form sending
+  send(); // Send text field contents
+});
+
+drink_select_3.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent form sending
+  send(); // Send text field contents
+});
 
 let dcache = null;
 let ccache = null;
