@@ -1,6 +1,9 @@
 let connectbutton = document.getElementById('connect');
 let logterminal = document.getElementById('terminal');
 let disconnectbutton = document.getElementById('disconnect');
+let drink_select_1 = document.getElementById('drink_select_1');
+let drink_select_2 = document.getElementById('drink_select_2');
+let drink_select_3 = document.getElementById('drink_select_3');
 
 connectbutton.addEventListener('click', function(){
 	connect();
@@ -158,6 +161,8 @@ function disconnect(){
 		ccache = null;
 	}
 	dcache = null;
-}
-}
+	}
 
+
+
+}
