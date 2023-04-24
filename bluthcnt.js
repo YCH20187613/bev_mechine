@@ -98,7 +98,7 @@ function handleDisconnection(event){
 }
 
 function log(data, type = ''){
-	logterminal.insertAdjacentHTML('beforeend', '<div' + (type ? ' class="' + type + '"' : '') + '>' + data + '</div>');
+	logterminal.insertAdjacentHTML('beforeend', '<div>' + data + '</div>');
 }
 if (ccache){
 	ccache.removeEventListener('characteristicvaluechanged', handleCharacteristicValueChanged);
