@@ -1,9 +1,7 @@
 let connectbutton = document.getElementById('connect');
 let logterminal = document.getElementById('terminal');
 let disconnectbutton = document.getElementById('disconnect');
-let drink_select_1 = document.getElementById('drink_select_1');
-let drink_select_2 = document.getElementById('drink_select_2');
-let drink_select_3 = document.getElementById('drink_select_3');
+
 
 connectbutton.addEventListener('click', function(){
 	connect();
@@ -13,13 +11,11 @@ disconnectbutton.addEventListener('click', function(){
 	disconnect();
 });
 
-drink_select_1.addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent form sending
+function pour_drink_1() {
   send("Hello"); // Send text field contents
 });
 
-drink_select_2.addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent form sending
+function pour_drink_2() {
   send("Bye"); // Send text field contents
 });
 
@@ -181,3 +177,7 @@ function disconnect(){
 
 
 }
+
+
+
+
