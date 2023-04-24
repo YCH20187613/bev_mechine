@@ -15,17 +15,17 @@ disconnectbutton.addEventListener('click', function(){
 
 drink_select_1.addEventListener('click', function(event) {
   event.preventDefault(); // Prevent form sending
-  send(); // Send text field contents
+  send("Hello"); // Send text field contents
 });
 
 drink_select_2.addEventListener('click', function(event) {
   event.preventDefault(); // Prevent form sending
-  send(); // Send text field contents
+  send("Bye"); // Send text field contents
 });
 
 drink_select_3.addEventListener('click', function(event) {
   event.preventDefault(); // Prevent form sending
-  send(); // Send text field contents
+  send("Goodnight"); // Send text field contents
 });
 
 let dcache = null;
@@ -149,6 +149,7 @@ function send(data){
 		}
 	}else {
 		writeToCharacteristic(ccache, data);
+		log(data, 'out');
 	}
 	
 	writeToCharacteristic(ccache, data);
