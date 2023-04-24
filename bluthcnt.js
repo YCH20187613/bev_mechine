@@ -13,11 +13,11 @@ disconnectbutton.addEventListener('click', function(){
 
 function pour_drink_1() {
   send("Hello"); // Send text field contents
-});
+}
 
 function pour_drink_2() {
   send("Bye"); // Send text field contents
-});
+}
 
 drink_select_3.addEventListener('click', function(event) {
   event.preventDefault(); // Prevent form sending
