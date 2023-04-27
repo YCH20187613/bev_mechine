@@ -12,17 +12,19 @@ disconnectbutton.addEventListener('click', function(){
 });
 
 function pour_drink_1() {
-  send("Hello"); // Send text field contents
+  send("s1"); 
 }
 
 function pour_drink_2() {
-  send("Bye"); // Send text field contents
+  send("s2"); 
 }
 
-drink_select_3.addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent form sending
-  send("Goodnight"); // Send text field contents
-});
+function pour_drink_3(){ 
+  send("s3");
+}
+
+
+
 
 let dcache = null;
 let ccache = null;
@@ -44,16 +46,23 @@ function ReqBluthDevice() {
 		filters: [{services: [0xFFE0]}],
 	}).
 	
-	then(device => {
-		log('""' + device.name + '"bluetooth device selected"');
-		dcache = device;
+		then(device => {
+			log('""' + device.name + '"bluetooth device selected"');
+			dcache = device;
 		
-		dcache.addEventListener('gattserverdisconnected', handleDisconnection);
+			dcache.addEventListener('gattserverdisconnected', handleDisconnection);
 		
-		return dcache;
+			return dcache;
 	});
 }
 
+function handleDisconnection(event){
+	let device = event.target;
+	
+	cDCC(device).
+		then(characteristic => startNotifications(characteristic)).
+		catch(error => log(error));
+}
 
 function cDCC(device) {
 	if (device.gatt.connected && ccache){
@@ -84,18 +93,12 @@ function cDCC(device) {
 function startNotifications(characteristic){
 	return characteristic.startNotifications().
 		then(() => {
-			log('started noti');
+			log('Bluetooth Connected!');
 			characteristic.addEventListener('characteristicvaluechanged', handleCharacteristicValueChanged);
 		});
 }
 
-function handleDisconnection(event){
-	let device = event.target;
-	
-	cDCC(device).
-		then(characteristic => startNotifications(characteristic)).
-		catch(error => log(error));
-}
+
 
 function log(data, type = ''){
 	logterminal.insertAdjacentHTML('beforeend', '<div>' + data + '</div>');
@@ -109,8 +112,8 @@ if (ccache){
 function handleCharacteristicValueChanged(event){
 	let value = new TextDecoder().decode(event.target.value);
 	
-	for (let a of value){
-		if(a === '\n'){
+	for (let c of value){
+		if(c === '\n'){
 			let data = rBuffer.trim();
 			rBuffer = '';
 			
@@ -118,13 +121,13 @@ function handleCharacteristicValueChanged(event){
 				receive(data);
 			}
 		}else{
-			rBuffer += a;
+			rBuffer += c;
 		}
 	}
 }
 
 function recieve(data){
-	log(data, 'in');
+	log("recieved:"+data);
 }
 
 
@@ -135,20 +138,9 @@ function send(data){
 		return;
 	}
 	
-	data += '\n';
-	
-	if (data.length > 20){
-		let chunks = data.match(/([\r\n]){1, 20}/g);
-		writeToCharacteristic(ccache, chunks[0]);
-		for(let i = 1; i < chunks.length; i++){
-			setTimeout(() => {writeToCharacteristic(ccache, chunks[i]);}, i*100);
-		}
-	}else {
-		writeToCharacteristic(ccache, data);
-		log(data, 'out');
-	}
 	
 	writeToCharacteristic(ccache, data);
+	log("send:"+data);
 }
 
 function writeToCharacteristic(characteristic, data){
@@ -173,11 +165,5 @@ function disconnect(){
 	}
 	dcache = null;
 	}
-
-
-
 }
-
-
-
 
