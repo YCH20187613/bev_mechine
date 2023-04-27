@@ -20,19 +20,19 @@
 		<p><b><1></b></p>
 		<img src = "drink_img/d1.jpg" width = "225" height = "300"><br>
 		<p><code>drink 1</code></p>
-		<label for = "d1per" class = "p0">Input percentage (%)</label>
-		<input type = "text" id = "d1per" name = "d1per"><br>
+		<label for = "d1per" class = "p0">Input times (1 time = 25%)</label>
+		<input type = "number" id = "d1per" name = "d1per" value = "0" min = "0" max = "4"><br>
 		<p><b><2></b></p>
 		<img src = "drink_img/d2.jpg" width = "225" height = "300"><br>
 		<p><code>drink 2</code></p>
-		<label for = "d2per" class = "p0">Input percentage (%)</label>
-		<input type = "text" id = "d2per" name = "d2per"><br>
+		<label for = "d2per" class = "p0">Input times (1 time = 25%)</label>
+		<input type = "number" id = "d2per" name = "d2per" value = "0"  min = "0" max = "4"><br>
 		<p><b><3></b></p>
 		<img src = "drink_img/d3.jpg" width = "225" height = "300"><br>
 		<p><code>drink 3</code></p>
-		<label for = "d3per" class = "p0">Input percentage (%)</label>
-		<input type = "text" id = "d3per" name = "d3per"><br>
-		<button type = "button" class = "btsty">Pour</button>
+		<label for = "d3per" class = "p0">Input times (1 time = 25%)</label>
+		<input type = "number" id = "d3per" name = "d3per" value = "0"  min = "0" max = "4"><br>
+		<button type = "button" class = "btsty" onclick = "sendMixCommand()">Pour</button>
 		<br><br>
 		<button type = "button" class = "btsty" onclick = "document.location = 'Webpage_welcome.html'">Back to main page</button>
 		<hr>
