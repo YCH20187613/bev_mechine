@@ -47,7 +47,7 @@ function ReqBluthDevice() {
 	}).
 	
 		then(device => {
-			log('""' + device.name + '"bluetooth device selected"');
+			
 			dcache = device;
 		
 			dcache.addEventListener('gattserverdisconnected', handleDisconnection);
@@ -69,21 +69,21 @@ function cDCC(device) {
 		return Promise.resolve(ccache);
 	}
 	
-	log('Connect to GATT server');
+	
 	
 	return device.gatt.connect().
 		then(server => {
-			log('gatt connected');
+			
 			return server.getPrimaryService(0xFFE0);
 		}).
 		
 		then(service => {
-			log('service found');
+			
 			return service.getCharacteristic(0xFFE1);
 		}).
 		
 		then(characteristic => {
-			log('c found');
+			
 			ccache = characteristic;
 			
 			return ccache;
@@ -140,7 +140,7 @@ function send(data){
 	
 	
 	writeToCharacteristic(ccache, data);
-	log("send:"+data);
+	
 }
 
 function writeToCharacteristic(characteristic, data){
@@ -166,4 +166,5 @@ function disconnect(){
 	dcache = null;
 	}
 }
+
 
