@@ -23,7 +23,15 @@ function pour_drink_3(){
   send("s3");
 }
 
-
+function sendMixCommand(){
+	let d1per = parseInt(document.getElementById('d1per').value, 10);
+	let d2per = parseInt(document.getElementById('d2per').value, 10);
+	let d3per = parseInt(document.getElementById('d3per').value, 10);
+	if ((d1per + d2per + d3per) > 4){
+		alert('Please choose maximum of 4 times!');
+	}else{
+	}
+}
 
 
 let dcache = null;
@@ -166,5 +174,4 @@ function disconnect(){
 	dcache = null;
 	}
 }
-
 
