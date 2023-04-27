@@ -40,7 +40,7 @@ function connect() {
 
 function ReqBluthDevice() {
 	
-	log('Requesting bluetooth device.');
+	
 	
 	return navigator.bluetooth.requestDevice({
 		filters: [{services: [0xFFE0]}],
