@@ -138,7 +138,7 @@ function send(data){
 		return;
 	}
 	
-	
+	log('choosed' + data);
 	writeToCharacteristic(ccache, data);
 	
 }
