@@ -11,6 +11,10 @@ Unistep2 mystepper(8, 9, 10, 11, 4096, 1000); //creating stepper
 String readBuffer = ""; //buffer for data read-in
 SoftwareSerial bluth(module_inputpin, module_outputpin); //create software serial
 
+int d1rep;
+int d2rep;
+int d3rep;
+
 
 
 void setup() {
@@ -59,9 +63,14 @@ void loop() {
           break;
         }
       }else if (readBuffer.length() > 2) { //eg a1b1c1, a0b2c2...
-        char d1rep = toInt(readBuffer.charAt(1)); // extract the command to integer as repetition of the operations
-        char d2rep = toInt(readBuffer.charAt(3));
-        char d3rep = toInt(readBuffer.charAt(5));
+        char d1 = readBuffer.charAt(1); // extract the command to integer as repetition of the operations
+        char d2 = readBuffer.charAt(3);
+        char d3 = readBuffer.charAt(5);
+        d1rep = d1.toInt();
+        d2rep = d2.toInt();
+        d3rep = d3.toInt();
+        
+
         reset_pos();
         delay(5000);
         move_drink_1();
