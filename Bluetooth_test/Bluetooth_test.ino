@@ -49,7 +49,7 @@ void loop() {
           servo_pour(4);
           readBuffer = "";
           break;
-        case (readBuffer == "s2"):
+        case (readBuffer == "s3"):
           reset_pos();
           delay(5000);
           move_drink_3();
