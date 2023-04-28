@@ -30,6 +30,7 @@ function sendMixCommand(){
 	if ((d1per + d2per + d3per) > 4){
 		alert('Please choose maximum of 4 times!');
 	}else{
+		send("a"+ d1per.value + "b" + d2per.value + "c" + d3per.value);
 	}
 }
 
@@ -174,4 +175,3 @@ function disconnect(){
 	dcache = null;
 	}
 }
-
